@@ -13,7 +13,7 @@ public class GridPanel extends JPanel{
     /**
      * Background image of the blue "Four in the row" grid.
      */
-    private static final Image BACKGROUND = Toolkit.getDefaultToolkit().getImage("images/background.png"); //pictures of the blue grid
+    private static final Image BACKGROUND = new ImageIcon(GridPanel.class.getResource("/resources/background.png")).getImage();
     /**
      * Array of images of the 10 different colour chips.
      */
@@ -38,8 +38,8 @@ public class GridPanel extends JPanel{
      * Adds the different colour chips to the array {@link #CHIPS}.
      */
     public GridPanel(){
-        for(int i=0; i<10; ++i){
-            CHIPS[i] = Toolkit.getDefaultToolkit().getImage("images/chip_"+i+".png");
+    	for(int i=0; i<10; ++i){
+    		CHIPS[i] = new ImageIcon(GridPanel.class.getResource("/resources/chip_"+i+".png")).getImage();
         }
     }
     

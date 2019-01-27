@@ -5,7 +5,7 @@ import java.awt.event.*;
 import java.awt.font.FontRenderContext;
 import java.awt.geom.AffineTransform;
 import javax.swing.*;
-import javax.swing.border.LineBorder;
+
 
 
 /**
@@ -19,7 +19,7 @@ public class Interf extends JFrame implements ActionListener{
     /**
      * Icon for the frame.
      */
-    private static final Image icon = Toolkit.getDefaultToolkit().getImage("images/icon.png");
+	private static final Image icon = new ImageIcon(Interf.class.getResource("/resources/icon.png")).getImage();
     /**
      * Menu bar at the top including: {@link #item menu items} and a {@link #menu menu} in the top right corner for other options.
      */
@@ -46,17 +46,17 @@ public class Interf extends JFrame implements ActionListener{
          */
         private JButton [] button = new JButton [7];
         /**
-         * Arrow image on the enabled {@link #button buttons}.
+         * Arrow image on the enabled {link #button buttons}.
          */
-        private static final ImageIcon arrow = new ImageIcon("images/arrow.png");
+        private static final Image arrow = new ImageIcon(Interf.class.getResource("/resources/arrow.png")).getImage();
         /**
          * Cross image on the disabled {@link #button buttons}.
          */
-        private static final ImageIcon cross = new ImageIcon("images/cross.png");
+        private final static Image cross = new ImageIcon(Interf.class.getResource("/resources/cross.png")).getImage();
     /**
      * {@link GridPanel}, that extends {@link JPanel} and has the actual grid for four in the row.
      */
-    private static final GridPanel gridPanel = new GridPanel();
+    private static GridPanel gridPanel = new GridPanel();
     /**
      * Label below the grid.<p>
      * It indicates who's turn it is or who has won.</p>
@@ -166,8 +166,8 @@ public class Interf extends JFrame implements ActionListener{
                     } 
                 }
             });
-            button[i].setIcon(arrow); //when button[i] is enabled it shows the arrow
-            button[i].setDisabledIcon(cross); //when button[i] is disabled it shows the red cross
+            button[i].setIcon(new ImageIcon(arrow)); //when button[i] is enabled it shows the arrow
+            button[i].setDisabledIcon(new ImageIcon(cross)); //when button[i] is disabled it shows the red cross
             buttonPanel.add(button[i]);
         }
         
